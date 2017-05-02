@@ -10,13 +10,16 @@ import { AuthService } from 'app/services/auth.service';
 import { PostService } from 'app/services/post.service';
 import { FeedService } from 'app/services/feed.service';
 
-import { MdSnackBar } from '@angular/material';
+import { Post } from 'app/services/objects/post';
+import { User } from 'app/services/objects/user'
+
+import { MdSnackBarModule } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    MdSnackBar
+    MdSnackBarModule
   ],
   declarations: [
     FeedComponent,
@@ -31,7 +34,9 @@ import { MdSnackBar } from '@angular/material';
   providers: [
     AuthService,
     PostService,
-    FeedService
+    FeedService,
+    Post,
+    User
   ]
 })
 export class SharedModule { }

@@ -9,17 +9,15 @@
           <li (click)="logout()">Logout</li>
         </ul>
       </li>
-    </div>
-  </ul>
+    </ul>
+  </div>
 </nav>
 
 <nav id="sidebar-wrapper">
-    <ul class="sidebar-nav nav nav-sidebar">
-      <li>
-        <a href"#" class="navbar-brand">🌊</a>
-      </li>
-      <li *ngFor="let link of links">
-        <a href={{link.link}}>{{link.name}}</a>
-      </li>
-    </ul>
+  <ul class="sidebar-nav nav nav-sidebar">
+
+    <li *ngFor="let link of links" class="nav-item">
+      <a href={{link.link}}>{{link.name}}</a>
+    </li>
+  </ul>
 </nav>

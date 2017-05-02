@@ -1,0 +1,7 @@
+.scroll-inf {
+  position: absolute;
+  height: 100%;
+  overflow:scroll;
+  overflow-y: hidden;
+  white-space:nowrap;
+}

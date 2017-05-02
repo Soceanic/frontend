@@ -3,6 +3,7 @@ import { ActivatedRoute, UrlSegment } from '@angular/router';
 
 import { FeedService } from 'app/services/feed.service';
 import { Post } from 'app/services/objects/post';
+import { PostComponent } from 'app/shared/post/post.component';
 
 @Component({
   selector: 'app-feed',

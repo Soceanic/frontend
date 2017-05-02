@@ -1,3 +1,5 @@
-<p>
-  feed works!
-</p>
+<div class="d-flex flex-wrap scroll-inf">
+  <span *ngFor="let post of feed">
+    <app-post [post]="post"></app-post>
+  </span>
+</div>
