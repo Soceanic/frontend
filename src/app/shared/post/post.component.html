@@ -1,0 +1,12 @@
+<div class="card">
+  <img *ngIf="post.attachment" class="card-img-top" src="{{post.attachment}}">
+  <div class="card-block">
+    <h4 class="card-title">{{post.title}}</h4>
+    <p class="card-text">{{post.text}}</p>
+    <span id="likes_{{post.id}}" class="likes">
+      <span class="glyphicon glyphicon-thumbs-up" (click)="like(post.id)"></span>
+      <span class="likes-number">{{post.likes}}</span>
+    </span>
+    <span class="glyphicon glyphicon-floppy-disk" (click)="save(post.id)"></span>
+  </div>
+</div>

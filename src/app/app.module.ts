@@ -5,6 +5,11 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import { LandingModule } from 'app/landing/landing.module';
+import { SharedModule } from 'app/shared/shared.module';
+
+import { Ng2PageScrollModule } from 'ng2-page-scroll';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -12,7 +17,10 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    LandingModule,
+    SharedModule,
+    Ng2PageScrollModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

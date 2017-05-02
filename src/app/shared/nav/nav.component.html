@@ -1,0 +1,25 @@
+<nav *ngIf="page!='landing'" class="navbar navbar-fixed-top">
+  <div class="container">
+    <ul class="nav navbar-nav pull-right">
+      <li routerLink="{{profileLink}}">My Profile</li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-menu-hamburger"></i><b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li routerLink="/settings">Settings</li>
+          <li (click)="logout()">Logout</li>
+        </ul>
+      </li>
+    </div>
+  </ul>
+</nav>
+
+<nav id="sidebar-wrapper">
+    <ul class="sidebar-nav nav nav-sidebar">
+      <li>
+        <a href"#" class="navbar-brand">🌊</a>
+      </li>
+      <li *ngFor="let link of links">
+        <a href={{link.link}}>{{link.name}}</a>
+      </li>
+    </ul>
+</nav>
