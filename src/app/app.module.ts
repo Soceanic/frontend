@@ -25,11 +25,23 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuard } from 'app/guards/auth.guard';
 
-const appRoutes: Routes = [
-  { path: '', component: LandingComponent },
+import { SettingsComponent } from 'app/shared/settings/settings.component';
+
+var curruser;
+var appRoutes: Routes = [
   { path: 'profile/:name', component: ProfileComponent, canActivate: [AuthGuard] },
-  { path: 'feed', component: MyFeedComponent, canActivate: [AuthGuard] }
+  { path: 'feed', component: MyFeedComponent, canActivate: [AuthGuard] },
+  { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard] }
 ];
+
+if(localStorage.getItem('currentUser')){
+  curruser = JSON.parse(localStorage.getItem('currentUser')).username;
+  appRoutes.push({ path: '**', redirectTo: '/feed' });
+}else{
+  appRoutes.push({ path: '**', component: LandingComponent });
+}
+
+
 
 @NgModule({
   declarations: [
