@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { MyFeedComponent } from './my-feed/my-feed.component';
 import { GroupsComponent } from './groups/groups.component';
 import { NewPostComponent } from './new-post/new-post.component';
+import { RouterModule } from '@angular/router';
 
 import { PostService } from 'app/services/post.service';
 import { Post } from 'app/services/objects/post';
 import { FeedService } from 'app/services/feed.service';
 import { SharedModule } from 'app/shared/shared.module';
 
-import { MdDialogModule } from '@angular/material';
+import { MdDialogModule, MdAutocompleteModule, MdInputModule } from '@angular/material';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -21,7 +22,11 @@ import { SearchComponent } from './search/search.component';
     CommonModule,
     MdDialogModule,
     ReactiveFormsModule,
-    SharedModule, ImageUploadModule
+    RouterModule,
+    SharedModule,
+    ImageUploadModule,
+    MdAutocompleteModule,
+    MdInputModule
   ],
   declarations: [MyFeedComponent, GroupsComponent, NewPostComponent, SearchComponent],
   exports: [MyFeedComponent],

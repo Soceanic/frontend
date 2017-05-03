@@ -8,10 +8,13 @@ import { RegistrationService } from 'app/services/registration.service';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { MdSnackBarModule } from '@angular/material';
+
 @NgModule({
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MdSnackBarModule
   ],
   declarations: [LandingComponent, LoginComponent, RegistrationComponent],
   exports: [LandingComponent],

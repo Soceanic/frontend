@@ -1,3 +1,9 @@
-<p>
-  Search works!
-</p>
+<md-input-container>
+   <input type="text" placeholder="Search Users" mdInput #term (keyup)="search(term.value)" [mdAutocomplete]="auto">
+</md-input-container>
+
+<md-autocomplete #auto="mdAutocomplete">
+   <md-option *ngFor="let user of items | async" [value]="user.username" (click)="redirect(user.username)">
+      {{ user.username }}
+   </md-option>
+</md-autocomplete>

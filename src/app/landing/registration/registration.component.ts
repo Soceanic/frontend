@@ -1,5 +1,7 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { MdSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
 
 import { RegistrationService } from 'app/services/registration.service';
 import { Registration } from 'app/services/objects/registration';
@@ -19,7 +21,8 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   form: FormGroup;
   submitted: boolean = false;
 
-  constructor(private service: RegistrationService, private fb: FormBuilder) { }
+  constructor(private service: RegistrationService, private fb: FormBuilder,
+    private router: Router, public snackbar: MdSnackBar) { }
 
   ngOnInit() {
     this.reg = new Registration();
@@ -128,8 +131,18 @@ register(){
   this.reg = this.form.value;
   this.service.register(this.reg)
               .subscribe(
-                user => console.log(user),
-                error => console.log(error)
+                user => {
+                  console.log(user);
+                  let snackbar = this.snackbar.open('Thank you for registering! Please verify your email.', '', {
+                    duration: 5000
+                  });
+                },
+                error => {
+                  console.log(error);
+                  this.snackbar.open('Error registering. Did you fill out all the fields?', '', {
+                    duration: 5000
+                  });
+                }
               );
 
   }

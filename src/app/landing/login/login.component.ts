@@ -8,6 +8,8 @@ import { Observable } from 'rxjs/Observable';
 
 import { Router } from '@angular/router';
 
+import { MdSnackBar } from '@angular/material';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -20,7 +22,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   submitted: boolean = false;
   err = null;
 
-  constructor(private service: AuthService, private fb: FormBuilder, private router: Router) { }
+  constructor(private service: AuthService, private fb: FormBuilder,
+    private router: Router, public snackbar: MdSnackBar) { }
 
   ngOnInit() {
     this._login = new Login();
@@ -90,8 +93,15 @@ export class LoginComponent implements OnInit, OnDestroy {
                       console.log(localStorage.getItem('currentUser'));
                       this.router.navigateByUrl('/feed');
                     } else {
-                      this.err = 'Login failed. Did you use the correct credentials?';
+                      this.snackbar.open('Error logging on, are you using the right userpass?', '', {
+                        duration: 5000
+                      });
                     }
+                  },
+                  err => {
+                    this.snackbar.open('Error logging on, are you using the right userpass?', '', {
+                      duration: 5000
+                    });
                   }
                 );
   }

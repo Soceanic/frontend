@@ -16,9 +16,10 @@ export class FeedService {
   private postUrl: string = 'http://soceanic.me/api/posts';
   private feedUrl: string = 'http://soceanic.me/api/feed';
   private boxUrl: string = 'http://soceanic.me/api/box';
+  private searchUrl: string = 'http://soceanic.me/api/search';
 
   getFeed(username): Observable<[Post]>{
-    return this.http.get(`${this.postUrl}/${username}`)
+    return this.http.get(`${this.feedUrl}/${username}`)
                     .map(
                       (res: Response) => {
                         let body = res.json();
@@ -73,11 +74,13 @@ export class FeedService {
   }
 
   search(query: string){
-    let url = `${this.boxUrl}/${query}`;
+    if(query == '') query = '%20';
+    let url = `${this.searchUrl}/${query}`;
     return this.http.get(url)
                     .map(
                       (res: Response) => {
                         let body = res.json();
+                        console.log('body of search: ', body);
                         return body;
                       }
                     )
