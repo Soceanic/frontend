@@ -1,13 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
+	height: 100%;
+	background-height:100%;
 	background-color: #e1ded7;
 	background: url(/assets/fabric-plaid.png);
 }
 
+
 .container {
-	width: auto;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 	padding: 50px;
 	margin-left: 60px;
+	background-size: cover;
+	background-position: center center;
 }
+
+button {
+	margin: 5px;
+	width: 40rem;
+	height: 5rem;
+	color:#ffffff;
+	font-size: 100px;
+	text-align: center!important;
+	border: none !important;
+	border-radius: 50px !important;
+	background-color:#042335 !important;
+	background-image: url(/assets/black-linen.png);
+}
+
+button:hover {
+	background-image: none;
+	background-color: #475963;
+}
+

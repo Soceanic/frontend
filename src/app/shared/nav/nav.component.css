@@ -4,9 +4,9 @@
 	z-index:1000;
 	position:fixed;
 	overflow:hidden;
+	display: list-item;
 	background-color:#042335;
 	background-image: url(/assets/black-linen.png);
-	display: list-item;
 }
 
 .nav>ul {

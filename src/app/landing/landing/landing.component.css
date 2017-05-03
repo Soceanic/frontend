@@ -1,6 +1,4 @@
 .container {
-	background-position: center center;
-	background-size: cover !important;
 	background-image: url(/assets/fabric-plaid.png), url(/assets/background.jpg) !important;
 }
 
@@ -10,28 +8,12 @@
 
 h1.title {
 	color:#000000;
-	padding: 30px;
-	font-size: 500%;
+	padding: 25px;
+	font-size: 250%;
 }
 
 .img {
-	width: 450px;
-    height: 450px;
+	width: 400px;
+    height: 400px;
     -webkit-animation-duration: 2s;
 }
-
-/*.buttons {
-	margin: 5px;
-	width: 450px;
-    height: 50px;
-    border: none;
-	color:#ffffff;
-	border-radius: 50px;
-	background-color:#042335;
-	background-image: url(/assets/black-linen.png);
-}*/
-
-/*.buttons:hover {
-	background-image: none;
-	background-color: #475963;
-}*/
