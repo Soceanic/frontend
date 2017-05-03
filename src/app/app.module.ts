@@ -18,6 +18,8 @@ import { ProfileComponent } from 'app/profile/profile/profile.component';
 import { FeedModule } from 'app/feed/feed.module';
 import { MyFeedComponent } from 'app/feed/my-feed/my-feed.component';
 
+import { SettingsComponent } from 'app/shared/settings/settings.component';
+
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { ImageUploadModule } from 'angular2-image-upload';
 
@@ -28,7 +30,8 @@ import { AuthGuard } from 'app/guards/auth.guard';
 const appRoutes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'profile/:name', component: ProfileComponent, canActivate: [AuthGuard] },
-  { path: 'feed', component: MyFeedComponent, canActivate: [AuthGuard] }
+  { path: 'feed', component: MyFeedComponent, canActivate: [AuthGuard] },
+  { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

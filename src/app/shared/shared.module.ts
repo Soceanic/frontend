@@ -9,6 +9,7 @@ import { PostComponent } from './post/post.component';
 import { AuthService } from 'app/services/auth.service';
 import { PostService } from 'app/services/post.service';
 import { FeedService } from 'app/services/feed.service';
+import { SettingsService } from 'app/services/settings.service';
 
 import { Post } from 'app/services/objects/post';
 import { User } from 'app/services/objects/user'
@@ -17,11 +18,16 @@ import { MdSnackBarModule } from '@angular/material';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import { SettingsComponent } from './settings/settings.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ImageUploadModule } from 'angular2-image-upload';
+
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    MdSnackBarModule
+    MdSnackBarModule,
+    ReactiveFormsModule,
+    ImageUploadModule
   ],
   declarations: [
     FeedComponent,
@@ -39,6 +45,7 @@ import { SettingsComponent } from './settings/settings.component';
     AuthService,
     PostService,
     FeedService,
+    SettingsService,
     Post,
     User
   ]
