@@ -16,11 +16,11 @@ export class RegistrationService {
   constructor(private http: Http) { }
 
   register(user: Registration) {
-    console.log('registering user');
+    //console.log('registering user');
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    console.log(user);
-    console.log(JSON.stringify(user));
+    //console.log(user);
+    //console.log(JSON.stringify(user));
 
     return this.http.post(this.regUrl, user, options)
                     .map(this.extractData)
@@ -33,7 +33,7 @@ export class RegistrationService {
 
   private extractData(res: Response) {
     if(!res.text()){
-      console.log(res.statusText);
+      //console.log(res.statusText);
     }
   }
 

@@ -30,7 +30,7 @@ export class PostService {
               )
               .catch(
                 (err: any) => {
-                  console.log('error saving post in post service', err);
+                  //console.log('error saving post in post service', err);
                   return Observable.throw(err);
                 }
               );
@@ -50,7 +50,7 @@ export class PostService {
             )
             .catch(
               (err: any) => {
-                console.log('error upvoting post in post service', err);
+                //console.log('error upvoting post in post service', err);
                 return Observable.throw(err);
               }
             );
@@ -65,7 +65,7 @@ export class PostService {
               )
               .catch(
                 (err: any) => {
-                  console.log('error getting post from post service', err);
+                  //console.log('error getting post from post service', err);
                   return Observable.throw(err);
                 }
               );
@@ -78,13 +78,13 @@ export class PostService {
     return this.http.post(`${this.postUrl}`, post, options)
                     .map(
                       (res: Response) => {
-                        console.log('newPost response in post service', res);
+                        //console.log('newPost response in post service', res);
                         return 'poop';
                       }
                     )
                     .catch(
                       (err: any) => {
-                        console.log('error posting post in post service', err);
+                        //console.log('error posting post in post service', err);
                         return Observable.throw(err);
                       }
                     )

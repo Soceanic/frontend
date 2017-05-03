@@ -9,6 +9,7 @@ import { PostComponent } from './post/post.component';
 import { AuthService } from 'app/services/auth.service';
 import { PostService } from 'app/services/post.service';
 import { FeedService } from 'app/services/feed.service';
+import { FriendsService } from 'app/services/friends.service';
 
 import { Post } from 'app/services/objects/post';
 import { User } from 'app/services/objects/user'
@@ -16,6 +17,7 @@ import { User } from 'app/services/objects/user'
 import { MdSnackBarModule } from '@angular/material';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import { SettingsComponent } from './settings/settings.component';
+import { RequestsComponent } from './requests/requests.component';
 
 @NgModule({
   imports: [
@@ -28,7 +30,8 @@ import { SettingsComponent } from './settings/settings.component';
     NavComponent,
     PostComponent,
     TopNavComponent,
-    SettingsComponent
+    SettingsComponent,
+    RequestsComponent
   ],
   exports: [
     FeedComponent,
@@ -40,7 +43,8 @@ import { SettingsComponent } from './settings/settings.component';
     PostService,
     FeedService,
     Post,
-    User
+    User,
+    FriendsService
   ]
 })
 export class SharedModule { }

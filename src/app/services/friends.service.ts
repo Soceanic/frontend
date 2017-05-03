@@ -21,7 +21,7 @@ export class FriendsService {
     respond: `${this.baseUrl}/respond`,
     block: `${this.baseUrl}/block`,
     status: `${this.baseUrl}/${this.curruser}`,
-    requests: `${this.baseUrl}/${this.curruser}`,
+    requests: `${this.baseUrl}/requests/${this.curruser}`,
     friends: `${this.baseUrl}/friends`
   }
 
@@ -37,7 +37,7 @@ export class FriendsService {
              )
              .catch(
                (err: any) => {
-                   console.log('error sending friend request', err)
+                   //console.log('error sending friend request', err)
                    return Observable.throw(err);
                }
              );
@@ -53,7 +53,7 @@ export class FriendsService {
                     )
                     .catch(
                       (err: any) => {
-                        console.log('error responding to friend request', err);
+                        //console.log('error responding to friend request', err);
                         return Observable.throw(err);
                       }
                     );
@@ -69,7 +69,7 @@ export class FriendsService {
              )
              .catch(
                (err: any) => {
-                   console.log('error blocking user', err)
+                   //console.log('error blocking user', err)
                    return Observable.throw(err);
                }
              );
@@ -85,23 +85,24 @@ export class FriendsService {
                     )
                     .catch(
                       (err: any) => {
-                        console.log('error getting status of a relationship', err);
+                        //console.log('error getting status of a relationship', err);
                         return Observable.throw(err);
                       }
                     );
   }
 
   requests(){
-    return this.http.get(`${this.urls.requests}/${this.curruser}`)
+    return this.http.get(`${this.urls.requests}`)
                     .map(
                       (res: Response) => {
+                        //console.log(res)
                         let body = res.json();
                         return body;
                       }
                     )
                     .catch(
                       (err: any) => {
-                        console.log('error getting friend requests', err);
+                        //console.log('error getting friend requests', err);
                         return Observable.throw(err);
                       }
                     );
@@ -117,7 +118,7 @@ export class FriendsService {
                     )
                     .catch(
                       (err: any) => {
-                        console.log('error getting friends', err);
+                        //console.log('error getting friends', err);
                         return Observable.throw(err);
                       }
                     );

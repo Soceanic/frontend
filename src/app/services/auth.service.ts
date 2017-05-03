@@ -26,7 +26,7 @@ export class AuthService {
     return this.http.post(this.authUrl, user, options)
                     .map((res: Response) => {
                       let token = JSON.parse(res.json())['jwt'];
-                      console.log('token: ', token);
+                      //console.log('token: ', token);
                       if(token != null) {
                         this.token = token;
                         localStorage.setItem('currentUser',

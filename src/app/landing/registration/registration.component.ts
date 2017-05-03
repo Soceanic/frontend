@@ -132,13 +132,13 @@ register(){
   this.service.register(this.reg)
               .subscribe(
                 user => {
-                  console.log(user);
+                  //console.log(user);
                   let snackbar = this.snackbar.open('Thank you for registering! Please verify your email.', '', {
                     duration: 5000
                   });
                 },
                 error => {
-                  console.log(error);
+                  //console.log(error);
                   this.snackbar.open('Error registering. Did you fill out all the fields?', '', {
                     duration: 5000
                   });

@@ -1,0 +1,11 @@
+<div class="container d-flex flex-wrap scroll-inf">
+  <div class="card" *ngFor="let request of requests">
+    <img class="img-fluid" src="{{request.profile_pic}}">
+    <div class="card-block">
+      <h4 class="card-title">{{request.first_name}} {{request.last_name}}</h4>
+      <p class="card-text">{{request.username_1}}</p>
+      <button class="btn" (click)="accept(request.username)">Accept</button>
+      <button class="btn" (click)="decline(request.username)">Decline</button>
+    </div>
+  </div>
+</div>

@@ -28,7 +28,7 @@ export class FeedService {
                     )
                     .catch(
                       (err: any) => {
-                        console.log('error getting feed in feed service', err);
+                        //console.log('error getting feed in feed service', err);
                         return Observable.throw(JSON.parse(err._body));
                       }
                     );
@@ -44,7 +44,7 @@ export class FeedService {
                     )
                     .catch(
                       (err: any) => {
-                        console.log('error getting posts in feed service', err);
+                        //console.log('error getting posts in feed service', err);
                         return Observable.throw(err);
                       }
                     );
@@ -67,7 +67,7 @@ export class FeedService {
                     )
                     .catch(
                       (err: any) => {
-                        console.log('error getting box in feed service', err);
+                        //console.log('error getting box in feed service', err);
                         return Observable.throw(err);
                       }
                     );
@@ -80,13 +80,13 @@ export class FeedService {
                     .map(
                       (res: Response) => {
                         let body = res.json();
-                        console.log('body of search: ', body);
+                        //console.log('body of search: ', body);
                         return body;
                       }
                     )
                     .catch(
                       (err: any) => {
-                        console.log('error getting results in search service', err);
+                        //console.log('error getting results in search service', err);
                         return Observable.throw(err);
                       }
                     );
