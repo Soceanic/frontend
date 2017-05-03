@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 body {
 	height: 100%;
 	background-height:100%;
@@ -34,4 +36,3 @@ button:hover {
 	background-image: none;
 	background-color: #475963;
 }
-
