@@ -11,13 +11,14 @@ import { FeedService } from 'app/services/feed.service';
 import { Post } from 'app/services/objects/post';
 
 import { SharedModule } from 'app/shared/shared.module';
+import { FriendComponent } from './friend/friend.component';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule
   ],
-  declarations: [ProfileComponent, ProfilePostsComponent, ProfileFriendsComponent],
+  declarations: [ProfileComponent, ProfilePostsComponent, ProfileFriendsComponent, FriendComponent],
   exports: [ProfileComponent],
   providers: [ProfileService, FeedService, User, Post]
 })
