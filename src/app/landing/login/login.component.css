@@ -6,6 +6,10 @@
 	width: 400px;
 }
 
+.form-control {
+	height: 3.5rem;
+}
+
 .login {
 	width: 15rem;
 	height: 2.5rem;

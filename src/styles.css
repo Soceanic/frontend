@@ -6,6 +6,7 @@ body {
 	background-size: cover;
 	background-color: #e1ded7;
 	background-position: center center;
+	font-family: 'Catamaran', sans-serif;
 	background: url(/assets/fabric-plaid.png);
 }
 
@@ -21,7 +22,7 @@ body {
 }
 
 button {
-	margin: 5px;
+	margin: 15px;
 	width: 40rem;
 	height: 5rem;
 	color:#ffffff;
