@@ -11,7 +11,7 @@ import { AuthService } from 'app/services/auth.service';
 export class NavComponent implements OnInit {
   page: string;
   public sidebar;
-  public profileLink;
+  public profileLink = undefined;
   urlSub;
   private url: string;
 
@@ -69,7 +69,7 @@ export class NavComponent implements OnInit {
 
   logout(){
     this.service.logout();
-    this.router.navigateByUrl('');
+    this.router.navigateByUrl('', { skipLocationChange: true });
   }
 
 }
