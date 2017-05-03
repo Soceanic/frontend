@@ -12,6 +12,7 @@ import { Post } from 'app/services/objects/post';
 
 import { SharedModule } from 'app/shared/shared.module';
 import { FriendComponent } from './friend/friend.component';
+import { FriendsService } from 'app/services/friends.service';
 
 @NgModule({
   imports: [
@@ -20,6 +21,6 @@ import { FriendComponent } from './friend/friend.component';
   ],
   declarations: [ProfileComponent, ProfilePostsComponent, ProfileFriendsComponent, FriendComponent],
   exports: [ProfileComponent],
-  providers: [ProfileService, FeedService, User, Post]
+  providers: [ProfileService, FeedService, User, Post, FriendsService]
 })
 export class ProfileModule { }

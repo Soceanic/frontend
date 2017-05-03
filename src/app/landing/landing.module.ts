@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { AboutComponent } from './about/about.component';
 
 import { RegistrationService } from 'app/services/registration.service';
 
@@ -16,7 +17,7 @@ import { MdSnackBarModule } from '@angular/material';
     ReactiveFormsModule,
     MdSnackBarModule
   ],
-  declarations: [LandingComponent, LoginComponent, RegistrationComponent],
+  declarations: [LandingComponent, LoginComponent, RegistrationComponent, AboutComponent],
   exports: [LandingComponent],
   providers: [RegistrationService]
 })

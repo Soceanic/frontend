@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, Input, DoCheck } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { AuthService } from 'app/services/auth.service';
@@ -8,68 +8,62 @@ import { AuthService } from 'app/services/auth.service';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent implements OnInit {
+export class NavComponent implements DoCheck {
   page: string;
   public sidebar;
   public profileLink = undefined;
   urlSub;
   private url: string;
 
+
   //sidebar uses anchor-relative naviagtion
-  private sideLinks = {
-    'landing': {
-      links: [
-        {name: 'Home', link: '#home'},
-        {name: 'About', link: '#about'}
-      ]
-    },
-    'feed': {
-      links: [
-        {name: 'My Feed', link: '#feed'},
-        {name: 'Groups', link: '#groups'}
-      ]
-    },
-    'profile': {
-      links: [
-        {name: 'Profile', link: '#profile'},
-        {name: 'Posts', link: '#posts'},
-        {name: 'Friends', link: '#friends'}
-      ]
-    }
-  }
+
 
   constructor(private service: AuthService, private router: Router,
     private route: ActivatedRoute) { }
 
-  ngOnInit() {
 
-    this.urlSub = this.route.url.subscribe(
-      url => {
-        this.url = url[0].path;
-        console.log(url);
-        console.log('current path:', this.url);
+    ngDoCheck(){
+      if(this.route.snapshot.children[0]){
+        if(this.route.snapshot.children[0].url[0]){
+        console.log(this.route.snapshot.children[0].url[0].path);
+        this.url = this.route.snapshot.children[0].url[0].path;
         if(this.url === 'feed'){
           this.page = 'feed';
         }else if(this.url === 'profile'){
           this.page = 'profile';
-        }else{
-          this.page = 'landing';
         }
-      },
-      err => {
-        console.log('error getting current url in nav component', err);
       }
-    );
-
-    if(localStorage.getItem('currentUser')){
-      this.profileLink = `/profile/${localStorage.getItem('currentUser')['username']}`;
+      if(localStorage.getItem('currentUser')){
+        this.profileLink = `/profile/${JSON.parse(localStorage.getItem('currentUser')).username}`;
+        console.log(this.profileLink);
+      }
+    }else{
+      this.page = 'landing';
     }
-    this.sidebar = this.sideLinks[this.page];
+    let sideLinks = {
+      'landing': {
+        links: [
+          {name: 'Home', link: '#home'},
+          {name: 'About', link: '#about'}
+        ]
+      },
+      'feed': {
+        links: [
+          {name: 'My Feed', link: '/feed'},
+          {name: 'Groups', link: '/feed#groups'}
+        ]
+      },
+      'profile': {
+        links: [
+          {name: 'Profile', link: `${this.profileLink}`},
+          {name: 'Posts', link: `${this.profileLink}#posts`},
+          {name: 'Friends', link: `${this.profileLink}#friends`}
+        ]
+      }
+    }
+
+    this.sidebar = sideLinks[this.page];
   }
 
-  logout(){
-    this.service.logout();
-    this.router.navigateByUrl('', { skipLocationChange: true });
   }
-
-}

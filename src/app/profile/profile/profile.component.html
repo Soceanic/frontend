@@ -1,11 +1,15 @@
 <div class="container">
-	<div class="left">
-		<img class="profile-pic rounded-circle" src="{{user?.profile_pic}}">
+	<div class="row">
+		<div class="left">
+			<img class="profile-pic rounded-circle" src="{{user?.profile_pic}}">
+		</div>
+		<div class="right">
+			<h3>{{user?.first_name}} {{user?.last_name}}</h3>
+			<p>{{user?.bio}}</p>
+		</div>
 	</div>
-	<div class="right">
-	  <p>{{user?.first_name}}</p>
-	  <p>{{user?.last_name}}</p>
-	  <p>{{user?.bio}}</p>
-	</div>
-	<app-profile-posts></app-profile-posts>
 </div>
+
+<app-profile-posts id="posts"></app-profile-posts>
+
+<app-profile-friends id="friends"></app-profile-friends>

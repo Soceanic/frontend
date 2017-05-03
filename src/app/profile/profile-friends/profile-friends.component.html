@@ -1,3 +1,6 @@
-<p>
-  profile-friends works!
-</p>
+<p>Friends</p>
+<div class="d-flex flex-wrap scroll-inf container">
+  <span *ngFor="let friend of friends">
+    <app-friend [friend]="friend"></app-friend>
+  </span>
+</div>
