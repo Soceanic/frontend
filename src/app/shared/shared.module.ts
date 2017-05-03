@@ -15,6 +15,7 @@ import { User } from 'app/services/objects/user'
 
 import { MdSnackBarModule } from '@angular/material';
 import { TopNavComponent } from './top-nav/top-nav.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { TopNavComponent } from './top-nav/top-nav.component';
     FeedComponent,
     NavComponent,
     PostComponent,
-    TopNavComponent
+    TopNavComponent,
+    SettingsComponent
   ],
   exports: [
     FeedComponent,
