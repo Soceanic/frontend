@@ -13,7 +13,7 @@ export class ProfilePostsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('loaded app-profile-posts');
+    //console.log('loaded app-profile-posts');
   }
 
 }

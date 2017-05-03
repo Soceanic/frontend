@@ -26,7 +26,7 @@ export class NavComponent implements DoCheck {
     ngDoCheck(){
       if(this.route.snapshot.children[0]){
         if(this.route.snapshot.children[0].url[0]){
-        console.log(this.route.snapshot.children[0].url[0].path);
+        //console.log(this.route.snapshot.children[0].url[0].path);
         this.url = this.route.snapshot.children[0].url[0].path;
         if(this.url === 'feed'){
           this.page = 'feed';
@@ -36,7 +36,7 @@ export class NavComponent implements DoCheck {
       }
       if(localStorage.getItem('currentUser')){
         this.profileLink = `/profile/${JSON.parse(localStorage.getItem('currentUser')).username}`;
-        console.log(this.profileLink);
+        //console.log(this.profileLink);
       }
     }else{
       this.page = 'landing';

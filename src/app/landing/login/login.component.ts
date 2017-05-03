@@ -88,9 +88,9 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.service.login(this._login)
                 .subscribe(
                   result => {
-                    console.log(result);
+                    //console.log(result);
                     if (result == true) {
-                      console.log(localStorage.getItem('currentUser'));
+                      //console.log(localStorage.getItem('currentUser'));
                       this.router.navigateByUrl('/feed');
                     } else {
                       this.snackbar.open('Error logging on, are you using the right userpass?', '', {

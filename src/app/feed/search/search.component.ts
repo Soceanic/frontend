@@ -26,7 +26,7 @@ export class SearchComponent implements OnInit {
   search(term: string) { this.searchTermStream.next(term); }
 
   ngOnInit() {
-    console.log('search loaded');
+    //console.log('search loaded');
     this.items = this.searchTermStream
       .debounceTime(300)
       .distinctUntilChanged()

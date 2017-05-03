@@ -5,6 +5,9 @@
 		</div>
 		<div class="right">
 			<h3>{{user?.first_name}} {{user?.last_name}}</h3>
+			<span *ngIf="curruser!=username">
+				<button class="btn" (click)="addFriend()">Add Friend</button>
+			</span>
 			<p>{{user?.bio}}</p>
 		</div>
 	</div>

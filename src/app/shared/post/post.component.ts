@@ -22,7 +22,7 @@ export class PostComponent implements OnInit {
   }
 
   save(){
-    console.log(`Post post_id being saved: ${this.post.post_id}`);
+    //console.log(`Post post_id being saved: ${this.post.post_id}`);
 
     this.service.save(this.curruser, +this.post.post_id)
                 .subscribe(
@@ -35,13 +35,13 @@ export class PostComponent implements OnInit {
                   err => {
                     let snackbar = this.snackBar.open('Error saving post', 'Ok',
                       {duration: 3000});
-                    console.log('error saving a post in post component', err);
+                    //console.log('error saving a post in post component', err);
                   }
                 );
   }
 
   like(){
-    console.log(`Post post_id being liked: ${this.post.post_id}`);
+    //console.log(`Post post_id being liked: ${this.post.post_id}`);
     this.service.upvote(this.curruser, +this.post.post_id)
                 .subscribe(
                   status => {
@@ -50,7 +50,7 @@ export class PostComponent implements OnInit {
                     }
                   },
                   err => {
-                    console.log('error liking a post in post component', err);
+                    //console.log('error liking a post in post component', err);
                   }
                 );
   }
@@ -59,11 +59,11 @@ export class PostComponent implements OnInit {
     this.service.get(this.post.post_id)
                 .subscribe(
                   post => {
-                    console.log(post);
+                    //console.log(post);
                     this.post.likes = post.likes;
                   },
                   err => {
-                    console.log('error updating likes in post component', err);
+                    //console.log('error updating likes in post component', err);
                   }
                 );
   }

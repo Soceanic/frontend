@@ -21,13 +21,13 @@ export class ProfileService {
                     .map(
                       (res: Response) => {
                         let body = res.json();
-                        console.log(body);
+                        //console.log(body);
                         return body;
                       }
                     )
                     .catch(
                       (err: any) => {
-                        console.log('error getting profile in profile service', err);
+                        //console.log('error getting profile in profile service', err);
                         return Observable.throw(err);
                       }
                     )
@@ -43,7 +43,7 @@ export class ProfileService {
                     )
                     .catch(
                       (err: any) => {
-                        console.log('error getting friends in profile service', err);
+                        //console.log('error getting friends in profile service', err);
                         return Observable.throw(err);
                       }
                     )

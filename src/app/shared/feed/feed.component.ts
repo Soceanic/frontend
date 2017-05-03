@@ -22,11 +22,11 @@ export class FeedComponent implements OnInit, OnDestroy {
       this.postSub = this.service.getFeed(username)
                   .subscribe(
                     feed => {
-                      console.log(feed);
+                      //console.log(feed);
                       this.feed = feed;
                     },
                     err => {
-                      console.log('error in feed component getting feed', err);
+                      //console.log('error in feed component getting feed', err);
                       this.err = err;
                     }
                   );
@@ -35,11 +35,11 @@ export class FeedComponent implements OnInit, OnDestroy {
       this.postSub = this.service.getPosts(username)
                   .subscribe(
                     posts => {
-                      console.log(posts);
+                      //console.log(posts);
                       this.feed = posts;
                     },
                     err => {
-                      console.log('error in feed component getting profile', err);
+                      //console.log('error in feed component getting profile', err);
                       this.err = err;
                     }
                   );
@@ -48,11 +48,11 @@ export class FeedComponent implements OnInit, OnDestroy {
       this.postSub = this.service.getBox(currname, friendname)
                   .subscribe(
                     posts => {
-                      console.log(posts);
+                      //console.log(posts);
                       this.feed = posts;
                     },
                     err => {
-                      console.log('error in feed component getting box', err);
+                      //console.log('error in feed component getting box', err);
                       this.err = err;
                     }
                   );
@@ -67,11 +67,11 @@ export class FeedComponent implements OnInit, OnDestroy {
     let currUrl: UrlSegment[];
     this.urlSub = this.route.url.subscribe(
       url => {
-        console.log('feed component is on url: ', url);
+        //console.log('feed component is on url: ', url);
         currUrl = url;
       },
       err => {
-        console.log('error getting url in feed component', err);
+        //console.log('error getting url in feed component', err);
       }
     )
 

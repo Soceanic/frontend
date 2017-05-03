@@ -20,10 +20,10 @@ export class ProfileFriendsComponent implements OnInit {
                 .subscribe(
                   friends => {
                     this.friends = friends;
-                    console.log(this.friends);
+                    //console.log(this.friends);
                   },
                   err => {
-                    console.log('error getting friends (rip) in profile-friends', err);
+                    //console.log('error getting friends (rip) in profile-friends', err);
                   }
                 );
   }

@@ -9,6 +9,7 @@ import { PostComponent } from './post/post.component';
 import { AuthService } from 'app/services/auth.service';
 import { PostService } from 'app/services/post.service';
 import { FeedService } from 'app/services/feed.service';
+import { FriendsService } from 'app/services/friends.service';
 import { SettingsService } from 'app/services/settings.service';
 
 import { Post } from 'app/services/objects/post';
@@ -17,6 +18,7 @@ import { User } from 'app/services/objects/user'
 import { MdSnackBarModule } from '@angular/material';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import { SettingsComponent } from './settings/settings.component';
+import { RequestsComponent } from './requests/requests.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImageUploadModule } from 'angular2-image-upload';
@@ -34,7 +36,8 @@ import { ImageUploadModule } from 'angular2-image-upload';
     NavComponent,
     PostComponent,
     TopNavComponent,
-    SettingsComponent
+    SettingsComponent,
+    RequestsComponent
   ],
   exports: [
     FeedComponent,
@@ -47,7 +50,8 @@ import { ImageUploadModule } from 'angular2-image-upload';
     FeedService,
     SettingsService,
     Post,
-    User
+    User,
+    FriendsService
   ]
 })
 export class SharedModule { }
