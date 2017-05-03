@@ -72,4 +72,21 @@ export class FeedService {
                     );
   }
 
+  search(query: string){
+    let url = `${this.boxUrl}/${query}`;
+    return this.http.get(url)
+                    .map(
+                      (res: Response) => {
+                        let body = res.json();
+                        return body;
+                      }
+                    )
+                    .catch(
+                      (err: any) => {
+                        console.log('error getting results in search service', err);
+                        return Observable.throw(err);
+                      }
+                    );
+  }
+
 }

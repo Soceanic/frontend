@@ -14,6 +14,7 @@ import { MdDialogModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { ImageUploadModule } from 'angular2-image-upload';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,7 @@ import { ImageUploadModule } from 'angular2-image-upload';
     ReactiveFormsModule,
     SharedModule, ImageUploadModule
   ],
-  declarations: [MyFeedComponent, GroupsComponent, NewPostComponent],
+  declarations: [MyFeedComponent, GroupsComponent, NewPostComponent, SearchComponent],
   exports: [MyFeedComponent],
   providers: [PostService, FeedService]
 })

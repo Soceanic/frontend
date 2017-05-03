@@ -26,7 +26,7 @@ export class RegistrationService {
                     .map(this.extractData)
                     .catch(
                       (err) => {
-                        return Promise.reject(err);
+                        return Observable.throw(err);
                       }
                     );
   }

@@ -23,10 +23,12 @@ import { ImageUploadModule } from 'angular2-image-upload';
 
 import { RouterModule, Routes } from '@angular/router';
 
+import { AuthGuard } from 'app/guards/auth.guard';
+
 const appRoutes: Routes = [
   { path: '', component: LandingComponent },
-  { path: 'profile/:name', component: ProfileComponent },
-  { path: 'feed', component: MyFeedComponent }
+  { path: 'profile/:name', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'feed', component: MyFeedComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
@@ -48,7 +50,7 @@ const appRoutes: Routes = [
     MdDialogModule,
     ImageUploadModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
