@@ -1,5 +1,17 @@
+form {
+	width: 400px;
+}
+
+.collapse {
+	padding: 25px;
+}
+
 .newpost {
 	width: 15rem;
 	height: 2.5rem;
+	background-color:#e1ded7 !important;
+}
+
+.newpost, form {
 	background-color:#e1ded7 !important;
 }
