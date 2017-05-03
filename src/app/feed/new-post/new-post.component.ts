@@ -55,8 +55,8 @@ export class NewPostComponent implements OnInit, OnDestroy {
 
     this.service.newPost(this.post)
                 .subscribe(
-                  poop => //console.log(poop),
-                  err => //console.log('error posting in new-post component')
+                  poop => {return},//console.log(poop),
+                  err => {return}//console.log('error posting in new-post component')
                 );
   }
 
