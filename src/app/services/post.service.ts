@@ -10,9 +10,9 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class PostService {
 
-  private saveUrl: string = 'http://vapeboyz.xyz/api/posts/save';
-  private upvoteUrl: string = 'http://vapeboyz.xyz/api/post/upvote';
-  private postUrl: string = 'http://vapeboyz.xyz/api/post';
+  private saveUrl: string = 'http://soceanic.me/api/post/save';
+  private upvoteUrl: string = 'http://soceanic.me/api/post/upvote';
+  private postUrl: string = 'http://soceanic.me/api/post';
 
   constructor(private http:Http) {
 

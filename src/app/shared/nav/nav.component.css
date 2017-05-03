@@ -6,6 +6,7 @@
 	overflow:hidden;
 	background-color:#042335;
 	background-image: url(/assets/black-linen.png);
+	display: list-item;
 }
 
 .nav>ul {

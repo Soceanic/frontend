@@ -13,13 +13,18 @@ export class PostComponent implements OnInit {
   @Input() post;
   constructor(private service: PostService, public snackBar: MdSnackBar) { }
 
-  ngOnInit() {
+  private curruser: string;
 
+  ngOnInit() {
+    if(localStorage.getItem('currentUser')){
+      this.curruser = JSON.parse(localStorage.getItem('currentUser')).username;
+    }
   }
 
-  save(id){
-    const curruser = localStorage.getItem('currentUser')['username'];
-    this.service.save(curruser, id)
+  save(){
+    console.log(`Post post_id being saved: ${this.post.post_id}`);
+
+    this.service.save(this.curruser, +this.post.post_id)
                 .subscribe(
                   status => {
                     if(status === true){
@@ -35,13 +40,13 @@ export class PostComponent implements OnInit {
                 );
   }
 
-  like(id){
-    const curruser = localStorage.getItem('currentUser')['username'];
-    this.service.upvote(curruser, id)
+  like(){
+    console.log(`Post post_id being liked: ${this.post.post_id}`);
+    this.service.upvote(this.curruser, +this.post.post_id)
                 .subscribe(
                   status => {
                     if(status === true){
-                      this.reload(id);
+                      this.reload();
                     }
                   },
                   err => {
@@ -50,10 +55,11 @@ export class PostComponent implements OnInit {
                 );
   }
 
-  private reload(id){
-    this.service.get(id)
+  private reload(){
+    this.service.get(this.post.post_id)
                 .subscribe(
                   post => {
+                    console.log(post);
                     this.post.likes = post.likes;
                   },
                   err => {

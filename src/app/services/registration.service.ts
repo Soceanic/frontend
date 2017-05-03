@@ -11,7 +11,7 @@ import 'rxjs/add/observable/throw';
 @Injectable()
 export class RegistrationService {
 
-  private regUrl: string = 'http://vapeboyz.xyz/api/user';
+  private regUrl: string = 'http://soceanic.me/api/user';
 
   constructor(private http: Http) { }
 

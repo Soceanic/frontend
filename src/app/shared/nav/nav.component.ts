@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { AuthService } from 'app/services/auth.service';
 
@@ -9,17 +9,17 @@ import { AuthService } from 'app/services/auth.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  @Input() page: string;
-
+  page: string;
   public sidebar;
-  public profileLink = `/profile/${localStorage.getItem('currentUser')['username']}`;
+  public profileLink;
+  urlSub;
+  private url: string;
 
   //sidebar uses anchor-relative naviagtion
   private sideLinks = {
     'landing': {
       links: [
         {name: 'Home', link: '#home'},
-        {name: 'Register', link: '#registration'},
         {name: 'About', link: '#about'}
       ]
     },
@@ -38,9 +38,32 @@ export class NavComponent implements OnInit {
     }
   }
 
-  constructor(private service: AuthService, private router: Router) { }
+  constructor(private service: AuthService, private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
+
+    this.urlSub = this.route.url.subscribe(
+      url => {
+        this.url = url[0].path;
+        console.log(url);
+        console.log('current path:', this.url);
+        if(this.url === 'feed'){
+          this.page = 'feed';
+        }else if(this.url === 'profile'){
+          this.page = 'profile';
+        }else{
+          this.page = 'landing';
+        }
+      },
+      err => {
+        console.log('error getting current url in nav component', err);
+      }
+    );
+
+    if(localStorage.getItem('currentUser')){
+      this.profileLink = `/profile/${localStorage.getItem('currentUser')['username']}`;
+    }
     this.sidebar = this.sideLinks[this.page];
   }
 

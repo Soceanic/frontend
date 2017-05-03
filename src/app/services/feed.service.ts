@@ -13,16 +13,16 @@ export class FeedService {
 
   constructor(private http: Http) { }
 
-  private postUrl: string = 'http://vapeboyz.xyz/api/posts';
-  private feedUrl: string = 'http://vapeboyz.xyz/api/feed';
-  private boxUrl: string = 'http://vapeboyz.xyz/api/box';
+  private postUrl: string = 'http://soceanic.me/api/posts';
+  private feedUrl: string = 'http://soceanic.me/api/feed';
+  private boxUrl: string = 'http://soceanic.me/api/box';
 
   getFeed(username): Observable<[Post]>{
     return this.http.get(`${this.postUrl}/${username}`)
                     .map(
                       (res: Response) => {
                         let body = res.json();
-                        return JSON.parse(body);
+                        return body;
                       }
                     )
                     .catch(
@@ -38,7 +38,7 @@ export class FeedService {
                     .map(
                       (res: Response) => {
                         let body = res.json();
-                        return JSON.parse(body);
+                        return body;
                       }
                     )
                     .catch(

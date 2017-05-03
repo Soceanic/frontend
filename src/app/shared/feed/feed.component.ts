@@ -22,6 +22,7 @@ export class FeedComponent implements OnInit, OnDestroy {
       this.postSub = this.service.getFeed(username)
                   .subscribe(
                     feed => {
+                      console.log(feed);
                       this.feed = feed;
                     },
                     err => {
@@ -34,6 +35,7 @@ export class FeedComponent implements OnInit, OnDestroy {
       this.postSub = this.service.getPosts(username)
                   .subscribe(
                     posts => {
+                      console.log(posts);
                       this.feed = posts;
                     },
                     err => {
@@ -46,6 +48,7 @@ export class FeedComponent implements OnInit, OnDestroy {
       this.postSub = this.service.getBox(currname, friendname)
                   .subscribe(
                     posts => {
+                      console.log(posts);
                       this.feed = posts;
                     },
                     err => {
@@ -59,12 +62,16 @@ export class FeedComponent implements OnInit, OnDestroy {
   constructor(private service: FeedService, private route: ActivatedRoute) { }
   //figure out what page i'm on and what to do accordingly
   ngOnInit() {
-    const currname= localStorage.getItem('currentUser')['username'];
+    let currname;
+    if(localStorage.getItem('currentUser')) currname = localStorage.getItem('currentUser')['username'];
     let currUrl: UrlSegment[];
     this.urlSub = this.route.url.subscribe(
       url => {
         console.log('feed component is on url: ', url);
         currUrl = url;
+      },
+      err => {
+        console.log('error getting url in feed component', err);
       }
     )
 

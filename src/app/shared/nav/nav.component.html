@@ -1,5 +1,4 @@
 <nav *ngIf="page!='landing'" class="navbar navbar-fixed-top">
-  <div class="container">
     <ul class="nav navbar-nav pull-right">
       <li routerLink="{{profileLink}}">My Profile</li>
       <li class="dropdown">
@@ -10,13 +9,11 @@
         </ul>
       </li>
     </ul>
-  </div>
 </nav>
 
 <nav id="sidebar-wrapper">
   <ul class="sidebar-nav nav nav-sidebar">
-
-    <li *ngFor="let link of links" class="nav-item">
+    <li *ngFor="let link of sidebar['links']" class="nav-item">
       <a href={{link.link}}>{{link.name}}</a>
     </li>
   </ul>

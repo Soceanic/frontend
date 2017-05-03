@@ -13,15 +13,16 @@ export class ProfileService {
 
   constructor(private http: Http) { }
 
-  private profileUrl: string = 'http://vapeboyz.xyz/users';
-  private friendUrl: string = 'http://vapeboyz.xyz/friends';
+  private profileUrl: string = 'http://soceanic.me/api/users';
+  private friendUrl: string = 'http://soceanic.me/api/friends';
 
   getProfile(username): Observable<User>{
     return this.http.get(`${this.profileUrl}/${username}`)
                     .map(
                       (res: Response) => {
                         let body = res.json();
-                        return JSON.parse(body);
+                        console.log(body);
+                        return body;
                       }
                     )
                     .catch(
@@ -37,7 +38,7 @@ export class ProfileService {
                     .map(
                       (res: Response) => {
                         let body = res.json();
-                        return JSON.parse(body);
+                        return body;
                       }
                     )
                     .catch(

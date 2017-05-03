@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AuthService {
 
-  private authUrl: string = 'http://vapeboyz.xyz/api/user/login';
+  private authUrl: string = 'http://soceanic.me/api/user/login';
 
   token: string;
 
