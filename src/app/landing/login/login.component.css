@@ -1,0 +1,29 @@
+.signin, .signup {
+	margin: 5px;
+	width: 40rem;
+  height: 5rem;
+  border: none;
+	color:#ffffff;
+	border-radius: 50px;
+	background-color:#042335;
+	background-image: url(/assets/black-linen.png);
+}
+
+.signin:hover, .signup:hover {
+	background-image: none;
+	background-color: #475963;
+}
+
+.card {
+  width: 40rem;
+  color: inherit;
+  background-color: inherit;
+  background-image: url(/assets/black-linen.png);
+  align-self: center;
+  text-align: center;
+}
+
+.main, .buttons {
+	text-align: center;
+  align-self: center;
+}

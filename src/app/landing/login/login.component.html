@@ -1,0 +1,13 @@
+<button class="btn btn-primary signin" data-toggle="collapse" data-target="#login-card">LOGIN</button>
+
+<div id="login-card" class="collapse">
+  <div class="card">
+    <div class="card-block" class="loginForm">
+      <form [formGroup]="form" (ngSubmit)="login()">
+        <input type="text" class="form-control" placeholder="Username" formControlName="username">
+        <input type="password" class="form-control" placeholder="Password" formControlName="password">
+        <button type="submit" class="btn btn-success">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
