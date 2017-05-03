@@ -8,3 +8,10 @@ export class Post{
   date_created: string;
   last_updated: string;
 }
+
+export class newPost{
+  username: string;
+  title: string;
+  text: string;
+  attach: string = null;
+}

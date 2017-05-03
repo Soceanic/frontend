@@ -63,7 +63,7 @@ export class FeedComponent implements OnInit, OnDestroy {
   //figure out what page i'm on and what to do accordingly
   ngOnInit() {
     let currname;
-    if(localStorage.getItem('currentUser')) currname = localStorage.getItem('currentUser')['username'];
+    if(localStorage.getItem('currentUser')) currname = JSON.parse(localStorage.getItem('currentUser')).username;
     let currUrl: UrlSegment[];
     this.urlSub = this.route.url.subscribe(
       url => {

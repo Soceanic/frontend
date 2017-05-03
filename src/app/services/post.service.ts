@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { Post } from './objects/Post';
+import { Post, newPost } from './objects/Post';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -57,9 +57,6 @@ export class PostService {
   }
 
   get(postid){
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
-
     return this.http.get(`${this.postUrl}/${postid}`)
               .map(
                 (res: Response) => {
@@ -74,5 +71,23 @@ export class PostService {
               );
   }
 
+  newPost(post: newPost){
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`${this.postUrl}`, post, options)
+                    .map(
+                      (res: Response) => {
+                        console.log('newPost response in post service', res);
+                        return 'poop';
+                      }
+                    )
+                    .catch(
+                      (err: any) => {
+                        console.log('error posting post in post service', err);
+                        return Observable.throw(err);
+                      }
+                    )
+  }
 
 }

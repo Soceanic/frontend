@@ -1,3 +1,12 @@
-<p>
-  new-post works!
-</p>
+<button class="btn btn-primary" data-toggle="collapse" data-target="#newpost">New Post</button>
+
+<div id="newpost" class="collapse">
+  <form [formGroup]="form" (ngSubmit)="newPost($event)">
+    Title<input type="text" class="form-control" placeholder="Title" formControlName="title">
+    Text<input type="text" class="form-control" placeholder="Text" formControlName="text">
+    <image-upload [url]="'http://soceanic.me/api/upload'"
+    (onFileUploadFinish)="imageUploaded($event)">
+    </image-upload>
+    <button type="submit" class="btn btn-success" [disabled]="form.invalid">Submit</button>
+  </form>
+</div>
