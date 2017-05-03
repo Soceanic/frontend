@@ -1,20 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-	height: 100%;
-	background-height:100%;
+	background-size: cover;
 	background-color: #e1ded7;
+	background-position: center center;
 	background: url(/assets/fabric-plaid.png);
 }
 
+.title, button {
+	text-align: center;
+}
 
 .container {
 	width: 100%;
 	height: 100%;
-	padding: 50px;
-	margin-left: 60px;
-	background-size: cover;
-	background-position: center center;
+	padding-top: 60px;
+	padding-left: 60px;
 }
 
 button {
@@ -22,8 +23,7 @@ button {
 	width: 40rem;
 	height: 5rem;
 	color:#ffffff;
-	font-size: 100px;
-	text-align: center!important;
+	padding: 25px;
 	border: none !important;
 	border-radius: 50px !important;
 	background-color:#042335 !important;

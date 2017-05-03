@@ -1,3 +1,13 @@
-.card {
+.collapse, .card {
 	padding: 25px;
+}
+
+.card{
+	width: 400px;
+}
+
+.login {
+	width: 15rem;
+	height: 2.5rem;
+	background-color:#e1ded7 !important;
 }

@@ -1,12 +1,13 @@
 .top-nav {
 	width:100%;
-	z-index:2000;
+	z-index:1000;
 	position:fixed;
-	background-color:#042335;
+	background-color:#e1ded7;
 	background-image: url(/assets/black-linen.png);
 }
 
 .nav li>a {
+	margin-right: 10px;
 	color:#ffffff;
 	border-spacing:0;
 	position:relative;

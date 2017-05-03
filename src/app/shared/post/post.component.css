@@ -1,9 +1,10 @@
 .card{
+  margin:5px;
   width: 30rem;
   height: 30rem;
 }
 
 .card>img{
-  max-height: 20rem;
-  max-width: auto;
+  max-height: 100%;
+  overflow: hidden;
 }
