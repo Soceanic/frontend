@@ -8,13 +8,19 @@
 	text-align: center;
 }
 
-.img-circle {
+h1.title {
+	color:#000000;
+	padding: 30px;
+	font-size: 500%;
+}
+
+.img {
 	width: 450px;
     height: 450px;
     -webkit-animation-duration: 2s;
 }
 
-.signin, .signup {
+.buttons {
 	margin: 5px;
 	width: 450px;
     height: 50px;
@@ -25,7 +31,7 @@
 	background-image: url(/assets/black-linen.png);
 }
 
-.signin:hover, .signup:hover {
+.buttons:hover {
 	background-image: none;
 	background-color: #475963;
 }
